@@ -8,4 +8,7 @@ JOIN
 	dbo.DimProduct p
 ON s.ProductKey = p.ProductKey
 GROUP BY
-p.EnglishProductName;
+	p.EnglishProductName
+ORDER BY 
+	sum(s.OrderQuantity) DESC
+	;
